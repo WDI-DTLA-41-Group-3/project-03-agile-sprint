@@ -1,21 +1,20 @@
-# WDI PROJECT #03 SPRINT - Group #3
-
+# WDI Project #03 Sprint - Group #3
 
 ## Overview
 
-- Medium Clone (App Title Here)
+- Tajj Mah-blog, a Medium clone
 
 - Technologies Used: 
 
 - User Stories: 
 
 
-## Team Members
+## Team Members ("TAJJ")
 
-- An "Professor X" (Scrum Master, Front End, Styling)
-- Justin "Juggernaut" (Front End, Oauth)
-- Jake "Wolverine" (Database, Back End) 
 - Tim "Nightcrawler" (Database, Back End)
+- An "Professor X" (Scrum Master, Front End, Styling)
+- Jake "Wolverine" (Database, Back End) 
+- Justin "Juggernaut" (Front End, Oauth)
 
 ## Wireframes
 
