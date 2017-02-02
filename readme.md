@@ -12,10 +12,10 @@
 
 ## Team Members
 
-- An (Scrum Master, Front End, Styling)
-- Justin (Front End, Oauth)
-- Jake (Database, Back End) 
-- Tim (Database, Back End)
+- An "Professor X" (Scrum Master, Front End, Styling)
+- Justin "Juggernaut" (Front End, Oauth)
+- Jake "Wolverine" (Database, Back End) 
+- Tim "Nightcrawler" (Database, Back End)
 
 ## Wireframes
 
