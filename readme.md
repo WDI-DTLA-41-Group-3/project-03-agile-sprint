@@ -1,3 +1,30 @@
+# WDI PROJECT #03 SPRINT - Group #3
+
+
+## Overview
+
+- Medium Clone (App Title Here)
+
+- Technologies Used: 
+
+- User Stories: 
+
+
+## Team Members
+
+- An (Scrum Master, Front End, Styling)
+- Justin (Front End, Oauth)
+- Jake (Database, Back End) 
+- Tim (Database, Back End)
+
+## Wireframes
+
+
+## Hosted on the Internet
+- [Page Name](http://url)
+
+
+===============================================================
 # Boilerplate
 
 # Usage
@@ -34,3 +61,5 @@ They'll be automatically loaded at the top of `server.js`
 # Sessions
 
 Data can be set and get with `req.session`
+
+
