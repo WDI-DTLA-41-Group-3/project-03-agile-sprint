@@ -16,16 +16,17 @@ router.get('/authorized', (req, res, next) =>{
 })
 
 router.post('/blog', function (req, res, next) {
-  var content = 'wet' // Blog Text Entry
-  var userId = 'crimclark' // Github username
+  var content = req.body.content // Blog Text Entry
+  var userId = req.session.someUserId // Github username
+  var blog_id = Date.now()
   User.findOne({ Id: userId }, (err, user) => {
     user.blogs.push({
-    content: content
-  })
-  console.log(user);
+      content: content,
+      blog_id: blog_id
+    })
   user.save();
   })
-  res.render('index', {content: content, userId: userId})
+  res.render('index', {content: content, userId: userId, blog_id: blog_id})
 });
 
 
@@ -36,6 +37,21 @@ router.get('/user/:id', function(req,res,next) {
     res.render('profile', {posts: posts})
   })
 })
+
+router.get('/blog/:id', function(req, res, next) {
+  var blog_id = req.params.id;
+  User.findOne({'blogs.blog_id': blog_id}, function (err, user) {
+    var user = user.id
+    var allBlogs = user.blogs;
+    allBlogs.forEach(function(b) {
+      if (b.blog_id === blog_id) {
+        res.render('blogpage', {post: b.content, user: user})
+      }
+    })
+  })
+})
+
+
 
 
 module.exports = router

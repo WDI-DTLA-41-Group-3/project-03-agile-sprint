@@ -6,7 +6,8 @@ var mongoose = require('mongoose')
 // })
 
 var BlogSchema = new mongoose.Schema({
-  content: String
+  content: String,
+  blog_id: Number
 })
 
 var UserSchema = new mongoose.Schema({
