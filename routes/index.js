@@ -32,8 +32,8 @@ router.post('/blog', function (req, res, next) {
 router.get('/user/:id', function(req,res,next) {
   var userId = req.params.id;
   User.findOne({Id: userId}, (err, user) => {
-    var posts = JSON.parse(user).blogs
-    res.render('handlebarsFileName', {posts: posts})
+    var posts = user.blogs
+    res.render('profile', {posts: posts})
   })
 })
 
