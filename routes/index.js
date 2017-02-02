@@ -3,7 +3,7 @@ const router = express.Router();
 const request = require('request');
 
 router.get('/', (req, res, next) => {
-  res.render('index', {title: 'TAJJ BLOG'});
+  res.render('index', {title: 'TAJJ Ma BLOG'});
 });
 
 router.get('/login', (req, res, next) =>{
