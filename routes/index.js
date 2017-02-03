@@ -84,11 +84,21 @@ router.get('/authorized', (req, res, next) =>{
 });
 
 router.get('/active', (req, res, next) => {
-  res.render('active', {title: 'TAJJ Ma BLOG'});
+  var allBlogs = [];
+  User.find({}, (err, users) => {
+      users.forEach(function (user) {
+        user.blogs.forEach(function (blog) {
+        blog.userId = user.Id;
+        allBlogs.push(blog);
+        })
+      })
+    console.log(allBlogs);
+    })
+  res.render('active', {blogs: allBlogs});
 });
 
 router.get('/profile', (req, res, next) => {
-  res.render('active', {title: 'tajj mah-blog'});
+  res.render('active');
 });
 
 router.post('/blog', function (req, res, next) {
@@ -114,10 +124,10 @@ router.post('/blog', function (req, res, next) {
       })
     console.log(allBlogs);
     })
+  res.render('active', {blogs: allBlogs})
   })
 });
   // res.render('active', {title: title, content: content, userId: userId, blog_id: blog_id})
-  res.render('active', {blogs: allBlogs})
 });
 
 router.get('/user/:id', function(req,res,next) {

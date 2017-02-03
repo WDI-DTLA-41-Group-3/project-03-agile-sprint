@@ -30,16 +30,17 @@
 
 <div class="blog-feed container">
 {{!-- Render blog feed here --}}
-  {{# each blogs}}
+  {{#each blogs}}
     <div class="blog-post">
       <h4 class="post-title">{{ this.title }} <span class="by-line">by {{ this.userId }}</span></h4>
-      <p class='entryID' style='visibility: hidden'>{{this._id}}</p>
       <div class="post-content">
         {{ this.content }}
       </div>
-      <a class="read-more right" href="#">Read More</a>
+      {{!-- <a class="read-more right" href="#">Read More</a> --}}
 
     </div>
+   {{/each}}
+
 {{!--   <div class="blog-post">
 
     <h4 class="post-title">My First Post <span class="by-line">by not_vader</span></h4>
@@ -59,5 +60,4 @@
   </div> --}}
 
 
-   {{/each}}
 </div>
