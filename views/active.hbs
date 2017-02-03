@@ -14,10 +14,10 @@
 
   <form class="center-align" action="/blog" method="post" accept-charset="utf-8">
 
-    <input type="text" name="title" id="textarea1" class="blog-title materialize-textarea left" placeholder="Title"></input>
+    <input type="text" id="textarea1" name="title" class="blog-title materialize-textarea left" placeholder="Title"></input>
     <textarea id="textarea2" name="content" class="content materialize-textarea" placeholder="Write something..."></textarea>
-    <input type="text" id="textarea3" class="blog-tags materialize-textarea" placeholder="Tags"></input>
-
+{{!--     <input type="text" id="textarea3" class="blog-tags materialize-textarea" placeholder="Tags"></input>
+ --}}
     <br><br>
 
     <button class="btn waves-effect waves-light red lighten-2" type="submit" name="action">Publish
@@ -30,7 +30,17 @@
 
 <div class="blog-feed container">
 {{!-- Render blog feed here --}}
-  <div class="blog-post">
+  {{# each blogs}}
+    <div class="blog-post">
+      <h4 class="post-title">{{ this.title }} <span class="by-line">by {{ this.userId }}</span></h4>
+      <p class='entryID' style='visibility: hidden'>{{this._id}}</p>
+      <div class="post-content">
+        {{ this.content }}
+      </div>
+      <a class="read-more right" href="#">Read More</a>
+
+    </div>
+{{!--   <div class="blog-post">
 
     <h4 class="post-title">My First Post <span class="by-line">by not_vader</span></h4>
     <div class="post-content">
@@ -46,36 +56,8 @@
       <li class="tag"><a class="tag" href="#">#darthvader</a></li>
     </ul>
 
-  </div>
+  </div> --}}
 
-  <div class="blog-post">
-    <h4 class="post-title">Blog, I Must <span class="by-line">by yodaman</span></h4>
-    <div class="post-content">
-      <p>Now will you move along, little fella? We're got a lot of work to do. No! No, no! Stay and help you, I will. Find your friend, hmm? I'm not looking for a friend, I'm looking for a Jedi Master. Oohhh. Jedi Master. Yoda. You seek Yoda. You know him? Mmm. Take you to him, I will. Yes, yes. But now, we must eat. Come. Good food. Come. Come, come. Stay here and watch after the camp, Artoo. You are beaten. It is useless to resist. Don't let yourself be destroyed as Obi-Wan did. There is no escape. Don't make me destroy you.</p>
-      <p>You do not yet realize your importance. You have only begun to discover you power. Join me and I will complete your training. With our combined strength, we can end this destructive conflict and bring order to the galaxy. I'll never join you! If you only knew the power of the dark side. Obi-Wan never told you what happened to your father. He told me enough! He told me you killed him. No. I am your father. No. No. That's not true! That's impossible! Search your feelings. You know it to be true. No! No! No! Luke. You can destroy the Emperor. He has foreseen this. It is your destiny. Join me, and we can rule the galaxy as father and son. Come with me. It's the only way.
-    </div>
-    <a class="read-more right" href="#">Read More</a>
-    <ul class="post-tags">
-      <li class="tag"><a class="tag" href="#">#dantooine</a></li>
-      <li class="tag"><a class="tag" href="#">#starwars</a></li>
-      <li class="tag"><a class="tag" href="#">#rebelalliance</a></li>
-    </ul>
 
-  </div>
+   {{/each}}
 </div>
-
-{{!-- blog feed template --}}
-<template id="feed-template">
-  <div class="blog-post">
-    <h4 class="post-title">{{ title }} <span class="by-line">by {{ userId }}</span></h4>
-    <div class="post-content">
-      {{ content }}
-    </div>
-    <a class="read-more right" href="#">Read More</a>
-    <ul class="post-tags">
-    {{# each tags}}
-      <li class="tag"><a class="tag" href="#">{{ hashtag }}</a></li>
-    {{/each}}
-    </ul>
-  </div>
-</template>
