@@ -15,6 +15,11 @@
   <form class="center-align" action="/blog" method="post" accept-charset="utf-8">
 
     <input type="text" id="textarea1" name="title" class="blog-title materialize-textarea left" placeholder="Title"></input>
+<<<<<<< HEAD
+    <textarea id="textarea2" name="content" class="content materialize-textarea" placeholder="Write something..."></textarea>
+    {{!-- <input type="text" id="textarea3" class="blog-tags materialize-textarea" placeholder="Tags"></input> --}}
+=======
+>>>>>>> 9dc0dc5bf260fdcf710b61b26488185e24013ae9
 
     <textarea id="textarea2" name="content" class="content materialize-textarea" placeholder="Write something..."></textarea>
 {{!--     <input type="text" id="textarea3" class="blog-tags materialize-textarea" placeholder="Tags"></input>
@@ -62,3 +67,22 @@
 
    {{/each}}
 </div>
+<<<<<<< HEAD
+
+{{!-- blog feed template --}}
+<template id="feed-template">
+  <div class="blog-post">
+    <h4 class="post-title">{{ title }} <span class="by-line">by {{ userId }}</span></h4>
+    <div class="post-content">
+      {{ content }}
+    </div>
+    <a class="read-more right" href="#">Read More</a>
+{{!--     <ul class="post-tags">
+    {{# each tags}}
+      <li class="tag"><a class="tag" href="#">{{ hashtag }}</a></li>
+    {{/each}}
+    </ul> --}}
+  </div>
+</template>
+=======
+>>>>>>> 9dc0dc5bf260fdcf710b61b26488185e24013ae9
