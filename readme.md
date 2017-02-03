@@ -1,65 +1,35 @@
-# WDI PROJECT #03 SPRINT - Group #3
-
+# WDI Project #03 Sprint - Group #3
 
 ## Overview
 
-- Medium Clone (App Title Here)
+"Tajj Mah-Blog", a Medium clone
 
-- Technologies Used: 
+Technologies Used: 
+- HTML
+- CSS
+- JavaScript
+- Materialize (CSS framework)
+- MongoDB
+- Express.js
+- Node.js
 
-- User Stories: 
+User Stories: 
+- [ ] As a user, I want to be able to sign in with Github
+- [ ] As a first time sign up, I want to be automatically assigned a new blog
+- [ ] As a logged in user I want to be able to write a blog and read blogs
+- [ ] As a writer, I want to write and publish blog posts
+- [ ] As a writer, I want to save drafts of posts to publish later
+- [ ] As a writer, I want to tag my posts
 
+## Team Members ("TAJJ")
 
-## Team Members
-
-- An "Professor X" (Scrum Master, Front End, Styling)
-- Justin "Juggernaut" (Front End, Oauth)
-- Jake "Wolverine" (Database, Back End) 
-- Tim "Nightcrawler" (Database, Back End)
+- Tim "Nightcrawler" (Database, back-end)
+- An "Professor X" (Scrum Master, front-end, styling)
+- Jake "Wolverine" (Database, back-end) 
+- Justin "Juggernaut" (Front-end, oauth)
 
 ## Wireframes
 
 
 ## Hosted on the Internet
 - [Page Name](http://url)
-
-
-===============================================================
-# Boilerplate
-
-# Usage
-
-# Database
-
-`db/config.js` configures the app to work with Mongoose
-
-To create seed data, write your code in `db/seed.js`
-Then run the script with:
-
-```
-$ npm run seed
-```
-
-# Style
-
-Standard is a JS module for creating a consistent style.
-
-Run it with 
-
-```
-$ npm run test
-```
-
-When possible standard will fix some styles automatically.
-Other errors will be listed in the terminal.
-
-# Environmental Variables
-
-Create a `.env` for storing environmental variables. 
-They'll be automatically loaded at the top of `server.js`
-
-# Sessions
-
-Data can be set and get with `req.session`
-
-
