@@ -62,8 +62,7 @@ router.get('/authorized', (req, res, next) =>{
         var gitInfo = JSON.parse(body);
         req.session.userName = gitInfo.login;
         req.session.avatar = gitInfo.avatar_url;
-        console.log('My username is: ' + gitInfo.login);
-        res.json(body);
+        res.redirect('/active');
       });
     } else {
         console.log('I am the error: ' + err);
