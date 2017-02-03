@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router();
 const request = require('request');
+require('dotenv').config();
 
 const Handlebars = require('handlebars');
 
@@ -9,6 +10,7 @@ const redirect_uri = 'http://127.0.0.1:3000/authorized';
 router.get('/', (req, res, next) => {
   Handlebars.registerPartial('myFirstPartial', '{{blogFeed}}')
   res.render('index', {title: 'TAJJ Ma BLOG'});
+})
 
 const User = require('../models/user')
 
@@ -117,16 +119,3 @@ router.get('/blog/:id', function(req, res, next) {
 
 
 module.exports = router
-
-
-
-
-
-
-
-
-
-
-
-
-
