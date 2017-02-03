@@ -8,7 +8,8 @@ var mongoose = require('mongoose')
 var BlogSchema = new mongoose.Schema({
   title: String,
   content: String,
-  blog_id: Number
+  blog_id: Number,
+  userId: String
 })
 
 var UserSchema = new mongoose.Schema({

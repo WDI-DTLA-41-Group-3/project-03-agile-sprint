@@ -7,7 +7,7 @@ User
 .then( () => {
   return User.create([
     {
-      Id: 'crimclark',
+      Id: 'joeschmo',
       avatar: 'http://placekitten.com/g/200/300',
       blogs: [{content: 'This is my blog'}]
     }

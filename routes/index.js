@@ -92,8 +92,8 @@ router.get('/profile', (req, res, next) => {
 });
 
 router.post('/blog', function (req, res, next) {
-  var title = req.body.title;
-  var content = req.body.content; // Blog Text Entry
+  var allBlogs = [];
+  var content = req.body.content // Blog Text Entry
   var userId = req.session.userName; // Github username
   var avatar = req.session.avatar;
   var title = req.body.title;
@@ -104,9 +104,20 @@ router.post('/blog', function (req, res, next) {
       content: content,
       blog_id: blog_id
     })
-  user.save();
-  });
-  res.render('active', {title: title, content: content, userId: userId, blog_id: blog_id})
+  user.save( (err, data) => {
+    User.find({}, (err, users) => {
+      users.forEach(function (user) {
+        user.blogs.forEach(function (blog) {
+        blog.userId = user.Id;
+        allBlogs.push(blog);
+        })
+      })
+    console.log(allBlogs);
+    })
+  })
+});
+  // res.render('active', {title: title, content: content, userId: userId, blog_id: blog_id})
+  res.render('active', {blogs: allBlogs})
 });
 
 router.get('/user/:id', function(req,res,next) {
