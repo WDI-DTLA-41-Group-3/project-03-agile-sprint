@@ -30,7 +30,7 @@
 
 <div class="blog-feed container">
 {{!-- Render blog feed here --}}
-  {{# each }}
+  {{# each blogs}}
     <div class="blog-post">
       <h4 class="post-title">{{ this.title }} <span class="by-line">by {{ this.userId }}</span></h4>
       <p class='entryID' style='visibility: hidden'>{{this._id}}</p>
