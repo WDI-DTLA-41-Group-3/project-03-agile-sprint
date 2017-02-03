@@ -12,28 +12,33 @@
 
 <div class="new-blog container">
 
-    <form class="center-align" action="submit" method="get" accept-charset="utf-8">
-      <input type="text" id="textarea1" class="blog-title materialize-textarea" placeholder="Title"></input>
+{{!--   <div class="new-blog">
+ --}}      <input type="text" id="textarea1" class="blog-title materialize-textarea left" placeholder="Title"></input>
       <textarea id="textarea2" class="content materialize-textarea" placeholder="Write something..."></textarea>
 
       <br><br>
 
+    <form class="center-align" action="submit" method="get" accept-charset="utf-8">
       <button class="btn waves-effect waves-light red lighten-2" type="submit" name="action">Publish
         <i class="material-icons right">send</i>
       </button>
     </form>
 
+  {{!-- </div> --}}
+
 </div>
 
 <br><br>
 <div class="blog-feed container">
+{{!-- Render blog feed here --}}
   <div class="blog-post">
-    <h4 class="post-title">My First Post <span id="by-line">by not_vader</span></h4>
+
+    <h4 class="post-title">My First Post <span class="by-line">by not_vader</span></h4>
     <div class="post-content">
       <p>Not after we demonstrate the power of this station. In a way, you have determined the choice of the planet that'll be destroyed first. Since you are reluctant to provide us with the location of the Rebel base, I have chosen to test this station's destructive power... on your home planet of Alderaan. No! Alderaan is peaceful. We have no weapons. You can't possibly... You would prefer another target? A military target? Then name the system! I grow tired of asking this. So it'll be the last time. Where is the Rebel base? Dantooine. They're on Dantooine.</p>
       <p>Holding her is dangerous. If word of this gets out, it could generate sympathy for the Rebellion in the senate. I have traced the Rebel spies to her. Now she is my only link to find their secret base! She'll die before she tells you anything. Leave that to me. Send a distress signal and then inform the senate that all aboard were killed! Lord Vader, the battle station plans are not aboard this ship! And no transmissions were made. An escape pod was jettisoned during the fighting, but no life forms were aboard. She must have hidden the plans in the escape pod. Send a detachment down to retrieve them. See to it personally, Commander. There'll be no one to stop us this time. Yes, sir.</p>
-      <p>They must be delivered safely or other star systems will suffer the same fate as Alderaan. Your destiny lies along a different path than mine. The Force will be with you...always! Boy you said it, Chewie. Where did you dig up that old fossil? Ben is a great man. Yeah, great at getting us into trouble. I didn't hear you give any ideas... Well, anything would be better than just hanging around waiting for him to pick us up... Who do you think...</p>
     </div>
+    <a class="read-more right" href="#">Read More</a>
 
     <ul class="post-tags">
       <li class="tag"><a class="tag" href="#">#alderaan</a></li>
@@ -43,4 +48,35 @@
     </ul>
 
   </div>
+
+  <div class="blog-post">
+    <h4 class="post-title">Blog, I Must <span class="by-line">by yodaman</span></h4>
+    <div class="post-content">
+      <p>Holding her is dangerous. If word of this gets out, it could generate sympathy for the Rebellion in the senate. I have traced the Rebel spies to her. Now she is my only link to find their secret base! She'll die before she tells you anything. Leave that to me. Send a distress signal and then inform the senate that all aboard were killed! Lord Vader, the battle station plans are not aboard this ship! And no transmissions were made. An escape pod was jettisoned during the fighting, but no life forms were aboard. She must have hidden the plans in the escape pod. Send a detachment down to retrieve them. See to it personally, Commander. There'll be no one to stop us this time. Yes, sir.</p>
+      <p>Not after we demonstrate the power of this station. In a way, you have determined the choice of the planet that'll be destroyed first. Since you are reluctant to provide us with the location of the Rebel base, I have chosen to test this station's destructive power... on your home planet of Alderaan. No! Alderaan is peaceful. We have no weapons. You can't possibly... You would prefer another target? A military target? Then name the system! I grow tired of asking this. So it'll be the last time. Where is the Rebel base? Dantooine. They're on Dantooine.</p>
+    </div>
+    <a class="read-more right" href="#">Read More</a>
+    <ul class="post-tags">
+      <li class="tag"><a class="tag" href="#">#dantooine</a></li>
+      <li class="tag"><a class="tag" href="#">#starwars</a></li>
+      <li class="tag"><a class="tag" href="#">#rebelalliance</a></li>
+    </ul>
+
+  </div>
 </div>
+
+{{!-- blog feed template --}}
+<template id="feed-template">
+  <div class="blog-post">
+    <h4 class="post-title">{{ title }} <span class="by-line">by {{ userId }}</span></h4>
+    <div class="post-content">
+      {{ content }}
+    </div>
+    <a class="read-more right" href="#">Read More</a>
+    <ul class="post-tags">
+    {{# each tags}}
+      <li class="tag"><a class="tag" href="#">{{ hashtag }}</a></li>
+    {{/each}}
+    </ul>
+  </div>
+</template>
