@@ -12,12 +12,13 @@ Technologies Used:
 - MongoDB
 - Express.js
 - Node.js
+- Heroku
 
 User Stories: 
-- [ ] As a user, I want to be able to sign in with Github
+- [x] As a user, I want to be able to sign in with Github
 - [ ] As a first time sign up, I want to be automatically assigned a new blog
 - [ ] As a logged in user I want to be able to write a blog and read blogs
-- [ ] As a writer, I want to write and publish blog posts
+- [x] As a writer, I want to write and publish blog posts
 - [ ] As a writer, I want to save drafts of posts to publish later
 - [ ] As a writer, I want to tag my posts
 
@@ -28,8 +29,5 @@ User Stories:
 - Jake "Wolverine" (Database, back-end) 
 - Justin "Juggernaut" (Front-end, oauth)
 
-## Wireframes
-
-
 ## Hosted on the Internet
-- [Page Name](http://url)
+- [tajj](http://agile-wave-34716.herokuapp.com/)
