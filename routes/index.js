@@ -42,8 +42,7 @@ router.get('/authorized', (req, res, next) =>{
     json: json
   }
   request(options, (err, response, body) =>{
-
-    if(response.statusCode === 200){
+    if(!err && response.statusCode === 200){
       req.session.access_token = body.access_token;
       const options = {
         method: 'GET',
@@ -54,13 +53,14 @@ router.get('/authorized', (req, res, next) =>{
         }
       }
       request(options, (err, response, body) => {
-        res.json(body);
+        JSON.parse(body);
+        console.log(body);
+        res.redirect('/active');
       });
-      // res.redirect('/active');
-    }// } // else {
-    // //   console.log('I am the error: ' + err);
-    //   res.json(body);
-    // }
+    } else {
+        console.log('I am the error: ' + err);
+        res.json(body);
+      }
   });
 });
 
