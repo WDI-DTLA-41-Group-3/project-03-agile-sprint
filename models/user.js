@@ -6,12 +6,13 @@ var mongoose = require('mongoose')
 // })
 
 var BlogSchema = new mongoose.Schema({
+  title: String,
   content: String,
   blog_id: Number
 })
 
 var UserSchema = new mongoose.Schema({
-  Id: String, //github Id
+  Id: {type: String, unique: true}, //github Id
   avatar: String, //github avatar url
   blogs: [BlogSchema]
 })
