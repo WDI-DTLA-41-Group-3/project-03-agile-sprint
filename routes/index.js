@@ -63,6 +63,23 @@ router.get('/authorized', (req, res, next) =>{
         var gitInfo = JSON.parse(body);
         req.session.userName = gitInfo.login;
         req.session.avatar = gitInfo.avatar_url;
+
+        console.log(gitInfo.avatar_url);
+
+        var user = new User({
+          Id: gitInfo.login,
+          avatar: gitInfo.avatar_url
+        })
+
+        user.save( (err, data) => {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(data);
+          }
+        })
+
+
         res.redirect('/active');
       });
     } else {

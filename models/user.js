@@ -11,7 +11,7 @@ var BlogSchema = new mongoose.Schema({
 })
 
 var UserSchema = new mongoose.Schema({
-  Id: String, //github Id
+  Id: {type: String, unique: true}, //github Id
   avatar: String, //github avatar url
   blogs: [BlogSchema]
 })
