@@ -14,10 +14,10 @@
 
   <form class="center-align" action="/blog" method="post" accept-charset="utf-8">
 
-    <input type="text" id="textarea1" class="blog-title materialize-textarea left" placeholder="Title"></input>
+    <input type="text" id="textarea1" name="title" class="blog-title materialize-textarea left" placeholder="Title"></input>
     <textarea id="textarea2" name="content" class="content materialize-textarea" placeholder="Write something..."></textarea>
-    <input type="text" id="textarea3" class="blog-tags materialize-textarea" placeholder="Tags"></input>
-
+{{!--     <input type="text" id="textarea3" class="blog-tags materialize-textarea" placeholder="Tags"></input>
+ --}}
     <br><br>
 
     <button class="btn waves-effect waves-light red lighten-2" type="submit" name="action">Publish
@@ -30,7 +30,8 @@
 
 <div class="blog-feed container">
 {{!-- Render blog feed here --}}
-  <div class="blog-post">
+  {{# each }}
+{{!--   <div class="blog-post">
 
     <h4 class="post-title">My First Post <span class="by-line">by not_vader</span></h4>
     <div class="post-content">
@@ -46,9 +47,9 @@
       <li class="tag"><a class="tag" href="#">#darthvader</a></li>
     </ul>
 
-  </div>
+  </div> --}}
 
-  <div class="blog-post">
+{{!--   <div class="blog-post">
     <h4 class="post-title">Blog, I Must <span class="by-line">by yodaman</span></h4>
     <div class="post-content">
       <p>Now will you move along, little fella? We're got a lot of work to do. No! No, no! Stay and help you, I will. Find your friend, hmm? I'm not looking for a friend, I'm looking for a Jedi Master. Oohhh. Jedi Master. Yoda. You seek Yoda. You know him? Mmm. Take you to him, I will. Yes, yes. But now, we must eat. Come. Good food. Come. Come, come. Stay here and watch after the camp, Artoo. You are beaten. It is useless to resist. Don't let yourself be destroyed as Obi-Wan did. There is no escape. Don't make me destroy you.</p>
@@ -62,6 +63,8 @@
     </ul>
 
   </div>
+   --}}
+   {{/each}}
 </div>
 
 {{!-- blog feed template --}}
@@ -72,10 +75,10 @@
       {{ content }}
     </div>
     <a class="read-more right" href="#">Read More</a>
-    <ul class="post-tags">
+{{!--     <ul class="post-tags">
     {{# each tags}}
       <li class="tag"><a class="tag" href="#">{{ hashtag }}</a></li>
     {{/each}}
-    </ul>
+    </ul> --}}
   </div>
 </template>

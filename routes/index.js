@@ -81,7 +81,8 @@ router.get('/profile', (req, res, next) => {
 });
 
 router.post('/blog', function (req, res, next) {
-  var content = req.body.content // Blog Text Entry
+  var title = req.body.title;
+  var content = req.body.content; // Blog Text Entry
   var userId = req.session.userName; // Github username
   var avatar = req.session.avatar;
   var blog_id = Date.now()
@@ -92,7 +93,7 @@ router.post('/blog', function (req, res, next) {
     })
   user.save();
   });
-  res.render('index', {content: content, userId: userId, blog_id: blog_id})
+  res.render('active', {title: title, content: content, userId: userId, blog_id: blog_id})
 });
 
 router.get('/user/:id', function(req,res,next) {
