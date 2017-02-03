@@ -11,10 +11,10 @@
 
 ## Team Members ("TAJJ")
 
-- Tim "Nightcrawler" (Database, Back End)
-- An "Professor X" (Scrum Master, Front End, Styling)
-- Jake "Wolverine" (Database, Back End) 
-- Justin "Juggernaut" (Front End, Oauth)
+- Tim "Nightcrawler" (Database, back-end)
+- An "Professor X" (Scrum Master, front-end, styling)
+- Jake "Wolverine" (Database, back-end) 
+- Justin "Juggernaut" (Front-end, oauth)
 
 ## Wireframes
 

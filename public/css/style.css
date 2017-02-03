@@ -1,9 +1,11 @@
 /**/
 .login {
-  margin: 14%;
+  margin: 15%;
+  padding: 6%;
 }
-h1 {
-  margin: 10%;
+h3 {
+  margin: 2% 0 6% 0;
+  color: silver;
 }
 a.page-title {
   margin-left: 1%;

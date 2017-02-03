@@ -4,7 +4,7 @@ const request = require('request');
 const User = require('../models/user')
 
 router.get('/', (req, res, next) => {
-  res.render('index', {title: 'TAJJ BLOG'});
+  res.render('index', {title: 'tajj mah-blog'});
 });
 
 router.get('/login', (req, res, next) =>{
@@ -12,7 +12,7 @@ router.get('/login', (req, res, next) =>{
 });
 
 router.get('/authorized', (req, res, next) =>{
-
+  res.render('active', {title: 'tajj mah-blog'});
 })
 
 router.post('/blog', function (req, res, next) {
