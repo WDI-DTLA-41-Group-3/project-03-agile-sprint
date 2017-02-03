@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router();
 const request = require('request');
+require('dotenv').config();
 
 const Handlebars = require('handlebars');
 
@@ -114,8 +115,4 @@ router.get('/blog/:id', function(req, res, next) {
   })
 })
 
-
-
-
 module.exports = router;
-

@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 const express = require('express')
 const favicon = require('serve-favicon')
 const bodyParser = require('body-parser')
