@@ -63,14 +63,10 @@ router.get('/authorized', (req, res, next) =>{
         var gitInfo = JSON.parse(body);
         req.session.userName = gitInfo.login;
         req.session.avatar = gitInfo.avatar_url;
-
-        console.log(gitInfo.avatar_url);
-
         var user = new User({
           Id: gitInfo.login,
           avatar: gitInfo.avatar_url
         })
-
         user.save( (err, data) => {
           if (err) {
             console.log(err);
@@ -78,8 +74,6 @@ router.get('/authorized', (req, res, next) =>{
             console.log(data);
           }
         })
-
-
         res.redirect('/active');
       });
     } else {
@@ -101,15 +95,17 @@ router.post('/blog', function (req, res, next) {
   var content = req.body.content // Blog Text Entry
   var userId = req.session.userName; // Github username
   var avatar = req.session.avatar;
+  var title = req.body.title;
   var blog_id = Date.now()
   User.findOne({ Id: userId }, (err, user) => {
     user.blogs.push({
+      title: title,
       content: content,
       blog_id: blog_id
     })
   user.save();
   });
-  res.render('index', {content: content, userId: userId, blog_id: blog_id})
+  res.render('active', {title: title, content: content, userId: userId, blog_id: blog_id})
 });
 
 router.get('/user/:id', function(req,res,next) {
