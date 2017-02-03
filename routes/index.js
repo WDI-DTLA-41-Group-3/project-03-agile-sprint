@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router();
 const request = require('request');
+const User = require('../models/user')
 require('dotenv').config();
 
 const Handlebars = require('handlebars');
@@ -8,11 +9,9 @@ const Handlebars = require('handlebars');
 const redirect_uri = 'http://127.0.0.1:3000/authorized';
 
 router.get('/', (req, res, next) => {
-  Handlebars.registerPartial('myFirstPartial', '{{blogFeed}}')
+  // Handlebars.registerPartial('myFirstPartial', '{{blogFeed}}')
   res.render('index', {title: 'TAJJ Ma BLOG'});
-})
-
-const User = require('../models/user')
+});
 
 // router.get('/', (req, res, next) => {
 //   res.render('index', {title: 'tajj mah-blog'});
@@ -61,8 +60,9 @@ router.get('/authorized', (req, res, next) =>{
         }
       }
       request(options, (err, response, body) => {
-        JSON.parse(body);
-        console.log(body);
+        var gitInfo = JSON.parse(body);
+        req.session.userName = gitInfo.login;
+        req.session.avatar = gitInfo.avatar_url;
         res.redirect('/active');
       });
     } else {
@@ -78,11 +78,12 @@ router.get('/active', (req, res, next) => {
 
 router.get('/profile', (req, res, next) => {
   res.render('active', {title: 'tajj mah-blog'});
-})
+});
 
 router.post('/blog', function (req, res, next) {
   var content = req.body.content // Blog Text Entry
-  var userId = req.session.someUserId // Github username
+  var userId = req.session.userName; // Github username
+  var avatar = req.session.avatar;
   var blog_id = Date.now()
   User.findOne({ Id: userId }, (err, user) => {
     user.blogs.push({
@@ -90,7 +91,7 @@ router.post('/blog', function (req, res, next) {
       blog_id: blog_id
     })
   user.save();
-  })
+  });
   res.render('index', {content: content, userId: userId, blog_id: blog_id})
 });
 
@@ -99,8 +100,8 @@ router.get('/user/:id', function(req,res,next) {
   User.findOne({Id: userId}, (err, user) => {
     var posts = user.blogs
     res.render('profile', {posts: posts})
-  })
-})
+  });
+});
 
 router.get('/blog/:id', function(req, res, next) {
   var blog_id = req.params.id;
@@ -111,8 +112,8 @@ router.get('/blog/:id', function(req, res, next) {
       if (b.blog_id === blog_id) {
         res.render('blogpage', {post: b.content, user: user})
       }
-    })
-  })
-})
+    });
+  });
+});
 
 module.exports = router;
