@@ -31,3 +31,7 @@ User Stories:
 
 ## Hosted on the Internet
 - [tajj](http://agile-wave-34716.herokuapp.com/)
+
+## Retro
+
+![Retro](http://i.imgur.com/DN4AIzR.jpg)
